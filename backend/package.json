@@ -1,0 +1,29 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "book store backend",
+  "main": "app.js",
+  "scripts": {
+    "start" : "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rudii1/Book-Store.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rudii1/Book-Store/issues"
+  },
+  "homepage": "https://github.com/Rudii1/Book-Store#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.2",
+    "nodemon": "^3.1.9",
+    "uuid": "^11.0.3"
+  }
+}
