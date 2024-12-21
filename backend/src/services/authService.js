@@ -32,11 +32,11 @@ const loginUser = async (userData) => {
     const email = userData.email;
     const password = userData.password;
     const existingUser = await User.findOne({ email: email });
-    if (existingUser) {
+    if (!existingUser) {
       throw new Error("User not exists");
     }
-    const isPasswordValid = await bycrpt.hash(password, existingUser.password);
-    if (isPasswordValid) {
+    const isPasswordValid = await bycrpt.compare(password, existingUser.password); // Fix password validation
+    if (!isPasswordValid) { // Fix condition to check if password is invalid
       throw new Error("Invalid password");
     }
     const token = jwt.sign(
@@ -46,7 +46,7 @@ const loginUser = async (userData) => {
     );
     return token;
   } catch (error) {
-    console.error(`Error creating user: ${error}`);
+    console.error(`Error logging in user: ${error}`); // Fix error message
   }
 };
 
